@@ -3,6 +3,7 @@ import { InputText } from "./components/02-InputText/InputText"
 import { ToogleState } from './components/03-ToogleState/ToogleState'
 import { Button } from "./components/04-Button/Button"
 import { ToDoList } from "./components/05-ToDoList/ToDoList"
+import { PiedraPapelTijera } from "./components/06-PiedraPapelTijera/PiedraPapelTijera"
 
 function App() {
   
@@ -12,7 +13,8 @@ function App() {
       {/* <InputText /> */}
       {/* <ToogleState /> */}
       {/* {<Button/>} */}
-      {<ToDoList/>}
+      {/* {<ToDoList/>} */}
+      {<PiedraPapelTijera/>}
     </div>
   )
 }
