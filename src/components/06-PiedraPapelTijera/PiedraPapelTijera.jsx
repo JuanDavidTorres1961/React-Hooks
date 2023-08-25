@@ -1,6 +1,13 @@
 import React, { useState } from 'react';
 
 export const PiedraPapelTijera = () => {
+
+  const classA = 'text-red-600 text-4x1'
+  const classB = 'text-green-600 text-4x1'
+  const classC = 'text-blue-600 text-4x1'
+
+  const [styleColor, setStyleColor] = useState('black'); 
+
   const [userChoice, setUserChoice] = useState('');
   const [cpuChoice, setCpuChoice] = useState('');
   const [result, setResult] = useState('');
@@ -13,16 +20,20 @@ export const PiedraPapelTijera = () => {
     const randomCpuChoice = choices[randomIndex];
     setCpuChoice(randomCpuChoice);
     
+    
     if (choice === randomCpuChoice) {
-      setResult('Empate');
+      setResult('Empató');
+      setStyleColor(classC);
     } else if (
       (choice === 'Piedra' && randomCpuChoice === 'Tijera') ||
       (choice === 'Papel' && randomCpuChoice === 'Piedra') ||
       (choice === 'Tijera' && randomCpuChoice === 'Papel')
     ) {
-      setResult('Ganaste');
+      setResult('Ganó');
+      setStyleColor(classB);
     } else {
-      setResult('Perdiste');
+      setResult('Perdió');
+      setStyleColor(classA);
     }
   };
 
@@ -31,8 +42,8 @@ export const PiedraPapelTijera = () => {
       <div className='flex justify-evenly w-64 flex-col items-center'>
         <h1 className='text-2xl text-orange-600'>Piedra, Papel o Tijera</h1>
         <p className='text-xl' style={{ color: 'white' }}>Usuario Eligio: {userChoice}</p>
-        <p className='text-xl'>CPU Chose: {cpuChoice}</p>
-        <h2 className='text-xl'>Usted: {result}</h2>
+        <p className='text-xl text-fuchsia-600'>CPU Chose: {cpuChoice}</p>
+        <h2 className={`text-xl ${styleColor}`}>Usted: {result}</h2>
       </div> <br />
 
       <div className='flex justify-evenly w-64'>
